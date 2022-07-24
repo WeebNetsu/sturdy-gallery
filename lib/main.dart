@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sturdy_gallery/ui/views/home.dart';
+import 'package:sturdy_gallery/routes.dart';
 
-void main() {
+Future<void> main() async {
   runApp(const MyApp());
 }
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
               // secondary: const Color(0xFFEB85AD),
             ),
       ),
-      home: const HomePage(title: 'Sturdy Gallery'),
+      routes: routes,
     );
   }
 }
