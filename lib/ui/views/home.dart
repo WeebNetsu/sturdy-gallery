@@ -15,8 +15,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool _hasStorageAccess = true;
-
   Future<Directory?> _getAppDir() async {
     // get access to external storage if we don't have it yet, if we do, execute code
     if (await Permission.manageExternalStorage.request().isGranted) {
@@ -40,54 +38,52 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: !_hasStorageAccess
-          ? SafeArea(child: Text("Require storage access"))
-          : ListView(
-              children: [
-                ElevatedButton(
-                  onPressed: () async {
-                    _getAppDir();
-                  },
-                  child: const Text("tete"),
-                ),
-                Row(
-                  children: const [
-                    FolderPreviewWidget("Folder 1"),
-                    FolderPreviewWidget("Folder 2", rightSide: true),
-                  ],
-                ),
-                Row(
-                  children: const [
-                    FolderPreviewWidget("Folder 1"),
-                    FolderPreviewWidget("Folder 2", rightSide: true),
-                  ],
-                ),
-                Row(
-                  children: const [
-                    FolderPreviewWidget("Folder 1"),
-                    FolderPreviewWidget("Folder 2", rightSide: true),
-                  ],
-                ),
-                Row(
-                  children: const [
-                    FolderPreviewWidget("Folder 1"),
-                    FolderPreviewWidget("Folder 2", rightSide: true),
-                  ],
-                ),
-                Row(
-                  children: const [
-                    FolderPreviewWidget("Folder 1"),
-                    FolderPreviewWidget("Folder 2", rightSide: true),
-                  ],
-                ),
-                Row(
-                  children: const [
-                    FolderPreviewWidget("Folder 1"),
-                    FolderPreviewWidget("Folder 2", rightSide: true),
-                  ],
-                ),
-              ],
-            ),
+      body: ListView(
+        children: [
+          ElevatedButton(
+            onPressed: () async {
+              _getAppDir();
+            },
+            child: const Text("tete"),
+          ),
+          Row(
+            children: const [
+              FolderPreviewWidget("Folder 1"),
+              FolderPreviewWidget("Folder 2", rightSide: true),
+            ],
+          ),
+          Row(
+            children: const [
+              FolderPreviewWidget("Folder 1"),
+              FolderPreviewWidget("Folder 2", rightSide: true),
+            ],
+          ),
+          Row(
+            children: const [
+              FolderPreviewWidget("Folder 1"),
+              FolderPreviewWidget("Folder 2", rightSide: true),
+            ],
+          ),
+          Row(
+            children: const [
+              FolderPreviewWidget("Folder 1"),
+              FolderPreviewWidget("Folder 2", rightSide: true),
+            ],
+          ),
+          Row(
+            children: const [
+              FolderPreviewWidget("Folder 1"),
+              FolderPreviewWidget("Folder 2", rightSide: true),
+            ],
+          ),
+          Row(
+            children: const [
+              FolderPreviewWidget("Folder 1"),
+              FolderPreviewWidget("Folder 2", rightSide: true),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
